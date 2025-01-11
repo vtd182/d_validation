@@ -1,7 +1,10 @@
+import 'package:d_validation/src/localization/languages/vietnamese_language.dart';
+
 import '../../d_validation.dart';
 
 final _availableLanguages = <Culture, Language>{
   Culture('en'): EnglishLanguage(),
+  Culture('vi'): VietnameseLanguage(),
   Culture('en', 'US'): EnglishLanguage(),
   Culture('en', 'UA'): EnglishLanguage(),
 };
