@@ -1,26 +1,6 @@
 part of 'validations.dart';
 
 extension ValidCreditCardValidation on SimpleValidationBuilder<String> {
-  /// Adds a validation rule that checks if the [String] is a valid credit card number.
-  ///
-  /// This method uses the Luhn algorithm to verify the validity of a credit card number.
-  /// It checks the length of the number and ensures it passes the Luhn check.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid credit card number".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.creditCard, key: 'creditCard')
-  ///  .validCreditCard();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String> validCreditCard({String? message, String? code}) {
     return use((value, entity) {
       if (_validateCreditCard(value)) return null;
@@ -40,26 +20,6 @@ extension ValidCreditCardValidation on SimpleValidationBuilder<String> {
 }
 
 extension ValidCreditCardNullableValidation on SimpleValidationBuilder<String?> {
-  /// Adds a validation rule that checks if the [String?] is a valid credit card number.
-  ///
-  /// This method uses the Luhn algorithm to verify the validity of a credit card number.
-  /// It checks the length of the number and ensures it passes the Luhn check.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid credit card number".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.creditCard, key: 'creditCard') // user.creditCard is nullable
-  ///  .validCreditCard();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String?> validCreditCard({String? message, String? code}) {
     return use((value, entity) {
       if (value != null && _validateCreditCard(value)) return null;
@@ -79,26 +39,6 @@ extension ValidCreditCardNullableValidation on SimpleValidationBuilder<String?> 
 }
 
 extension ValidCreditCardOrNullableValidation on SimpleValidationBuilder<String?> {
-  /// Adds a validation rule that checks if the [String?] is a valid credit card number or [null].
-  ///
-  /// This method uses the Luhn algorithm to verify the validity of a credit card number.
-  /// It checks the length of the number and ensures it passes the Luhn check.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid credit card number".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.creditCard, key: 'creditCard')
-  ///  .validCreditCardOrNull();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String?> validCreditCardOrNull({String? message, String? code}) {
     return use((value, entity) {
       if (value == null) return null;

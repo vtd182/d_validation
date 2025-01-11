@@ -1,27 +1,6 @@
 part of 'validations.dart';
 
-/// Extension on [DValidationBuilder] for [String] properties to add a valid CPF validation.
-///
-/// This extension adds a `validCPF` method that can be used to ensure that a string
-/// is a valid CPF number.
 extension ValidCPFValidation on SimpleValidationBuilder<String> {
-  /// Adds a validation rule that checks if the [String] is a valid CPF number.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid CPF".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-  ///
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.cpf, key: 'cpf')
-  ///   .validCPF();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String> validCPF({String? message, String? code}) {
     return use((value, entity) {
       if (_validateCPF(value)) return null;
@@ -41,23 +20,6 @@ extension ValidCPFValidation on SimpleValidationBuilder<String> {
 }
 
 extension ValidCPFNullableValidation on SimpleValidationBuilder<String?> {
-  /// Adds a validation rule that checks if the [String?] is a valid CPF number.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid CPF".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-  ///
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.cpf, key: 'cpf') // user.cpf is nullable
-  ///   .validCPF();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String?> validCPF({String? message, String? code}) {
     return use((value, entity) {
       if (value != null && _validateCPF(value)) return null;
@@ -77,23 +39,6 @@ extension ValidCPFNullableValidation on SimpleValidationBuilder<String?> {
 }
 
 extension ValidCPFOrNullableValidation on SimpleValidationBuilder<String?> {
-  /// Adds a validation rule that checks if the [String?] is a valid CPF number or [null].
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid CPF".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-  ///
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.cpf, key: 'cpf') /// user.name is nullable
-  ///   .validCPFOrNull();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String?> validCPFOrNull({String? message, String? code}) {
     return use((value, entity) {
       if (value == null || _validateCPF(value)) return null;

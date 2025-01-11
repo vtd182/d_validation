@@ -1,27 +1,6 @@
 part of 'validations.dart';
 
 extension ValidCnpjValidation on SimpleValidationBuilder<String> {
-  /// Adds a validation rule that checks if the [String] is a valid CNPJ number.
-  ///
-  /// The CNPJ is the national identifier for Brazilian companies. This method
-  /// verifies the format and the validity of the CNPJ, ensuring it follows the correct
-  /// algorithm for digit verification.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid CNPJ".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-  ///
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.cnpj, key: 'cnpj')
-  ///  .validCNPJ();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String> validCNPJ({String? message, String? code}) {
     return use((value, entity) {
       if (_validateCNPJ(value)) return null;
@@ -41,27 +20,6 @@ extension ValidCnpjValidation on SimpleValidationBuilder<String> {
 }
 
 extension ValidCnpjNullableValidation on SimpleValidationBuilder<String?> {
-  /// Adds a validation rule that checks if the [String?] is a valid CNPJ number.
-  ///
-  /// The CNPJ is the national identifier for Brazilian companies. This method
-  /// verifies the format and the validity of the CNPJ, ensuring it follows the correct
-  /// algorithm for digit verification.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid CNPJ".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-  ///
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.cnpj, key: 'cnpj')
-  ///  .validCNPJ();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String?> validCNPJ({String? message, String? code}) {
     return use((value, entity) {
       if (value != null && _validateCNPJ(value)) return null;
@@ -81,27 +39,6 @@ extension ValidCnpjNullableValidation on SimpleValidationBuilder<String?> {
 }
 
 extension ValidCnpjOrNullableValidation on SimpleValidationBuilder<String?> {
-  /// Adds a validation rule that checks if the [String?] is a valid CNPJ number or [null].
-  ///
-  /// The CNPJ is the national identifier for Brazilian companies. This method
-  /// verifies the format and the validity of the CNPJ, ensuring it follows the correct
-  /// algorithm for digit verification.
-  ///
-  /// [message] is the error message returned if the validation fails. Defaults to "Invalid CNPJ".
-  /// [code] is an optional error code for translation purposes.
-  ///
-  /// Returns the [DValidationBuilder] to allow for method chaining.
-  ///
-  /// Example:
-  /// ```dart
-  /// ...
-  /// ruleFor((user) => user.cnpj, key: 'cnpj')
-  ///  .validCNPJOrNull();
-  /// ```
-  ///
-  /// String format args:
-  /// - **{PropertyName}**: The name of the property.
-  ///
   SimpleValidationBuilder<String?> validCNPJOrNull({String? message, String? code}) {
     return use((value, entity) {
       if (value == null) return null;
