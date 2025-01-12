@@ -1,5 +1,29 @@
-import 'package:d_validation/src/widgets/d_validate_email_text_field.dart';
+import 'package:d_validation/d_validation.dart';
+import 'package:d_validation/src/base_model.dart';
 import 'package:flutter/material.dart';
+
+class UserModel extends BaseModel<UserModel> {
+  final String email;
+  final String password;
+  final int age;
+  final String phone;
+
+  UserModel({
+    required this.email,
+    required this.password,
+    required this.age,
+    required this.phone,
+  }) : super();
+
+  @override
+  void defineRules(BaseValidator<UserModel> validator) {
+    validator
+      ..ruleFor((user) => user.email, key: 'email').notEmpty().validEmail().cascade(CascadeMode.stopOnFirstFailure)
+      ..ruleFor((user) => user.age, key: 'age').min(18, message: 'Age must be at least 18')
+      ..ruleFor((user) => user.phone, key: 'phone').notEmpty()
+      ..ruleFor((user) => user.password, key: 'password').notEmpty().minLength(6, message: 'Password must be at least 6 characters');
+  }
+}
 
 // Màn hình chính với DValidateEmailTextField
 class MyHomePage extends StatefulWidget {
@@ -65,9 +89,17 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Hàm main
 void main() {
-  runApp(const MyApp());
+  try {
+    UserModel user = UserModel(
+      email: "invalid",
+      password: "123",
+      age: 17,
+      phone: "",
+    );
+  } catch (e) {
+    print("Validation failed: $e");
+  }
 }
 
 // MyApp - Ứng dụng chính

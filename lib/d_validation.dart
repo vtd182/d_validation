@@ -2,6 +2,7 @@ library d_validation;
 
 import 'd_validation.dart';
 
+export 'src/base_model.dart';
 export 'src/d_validation_builder.dart';
 export 'src/d_validator.dart';
 export 'src/localization/language_manager.dart';
