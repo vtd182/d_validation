@@ -1,5 +1,4 @@
 import '../d_validation.dart';
-import 'enum/cascade_mode.dart';
 
 abstract class DValidator<E> {
   final List<DValidationBuilder<dynamic, E>> _builders = [];

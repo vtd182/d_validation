@@ -1,5 +1,9 @@
 import '../d_validation.dart';
-import 'enum/cascade_mode.dart';
+
+enum CascadeMode {
+  continueExecution,
+  stopOnFirstFailure,
+}
 
 typedef RuleFunc<Entity> = ValidationException? Function(Entity entity);
 

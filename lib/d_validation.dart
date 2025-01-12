@@ -1,7 +1,5 @@
 library d_validation;
 
-import 'package:d_validation/src/enum/cascade_mode.dart';
-
 import 'd_validation.dart';
 
 export 'src/d_validation_builder.dart';

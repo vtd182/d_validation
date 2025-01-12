@@ -1,4 +1,0 @@
-enum CascadeMode {
-  continueExecution,
-  stopOnFirstFailure,
-}
