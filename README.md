@@ -15,6 +15,24 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## IDE setup 
+### Prerequisites
+- Dart: https://dart.dev/get-dart
+- Flutter: https://docs.flutter.dev/get-started/install
+
+### Android Studio 
+- First we need install two plugins for dart and flutter by Setting -> Plugins -> Marketplace and install them
+- Restart the IDEA
+- Select the specific device and run
+<img width="949" alt="Screenshot 2025-01-13 at 01 56 38" src="https://github.com/user-attachments/assets/75df2546-7854-4858-855b-73d7f176e97d" />
+
+### VS-Code
+- https://docs.flutter.dev/get-started/editor
+
+### Validate config
+```
+flutter doctor
+```
 
 ## Installation 
 
